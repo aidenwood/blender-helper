@@ -47,7 +47,9 @@ def apply_cycles_fast(scene):
     cy.transparent_max_bounces = 4
     cy.sample_clamp_direct = 10.0
     cy.sample_clamp_indirect = 4.0
-    cy.use_persistent_data = True
+    # Persistent data moved to render settings in Blender 4.x+.
+    scene.render.use_persistent_data = True
+    cy.use_auto_tile = True
     cy.tile_size = 2048
 
 
