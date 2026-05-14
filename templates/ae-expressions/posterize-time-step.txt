@@ -1,0 +1,7 @@
+// attach to: ABOVE any other expression on the property
+// effect: forces the expression below to evaluate at a lower frame rate — chunky stepped motion
+
+posterizeTime(12);   // 12 fps stepped motion. 8 = chunkier, 24 = subtle.
+
+// then whatever was already on the property — e.g.
+wiggle(2, 50)

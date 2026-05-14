@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Blender artifacts
+*.blend1
+*.blend2
+*.blend@
+*.orig
+
+# Render outputs (these can be large)
+renders/
+*.mov
+*.mp4
+*.png.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Local secrets / config
+.env
+.env.local
+
+# Claude Code
+.claude/

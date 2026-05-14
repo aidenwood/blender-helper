@@ -1,0 +1,13 @@
+// attach to: any property on multiple layers — each layer reads the layer above it, delayed.
+// gotcha: layer 1 has no "layer 0" — wrap in try/catch or guard with if(index > 1)
+
+delayPerLayer = 0.1;   // seconds of offset per layer index
+
+if (index > 1) {
+    thisComp.layer(index - 1).transform.position.valueAtTime(time - delayPerLayer)
+} else {
+    value
+}
+
+// For non-position properties replace `transform.position` with the property path,
+// e.g. `transform.rotation` or `effect("Slider Control")("Slider")`.

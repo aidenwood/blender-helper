@@ -1,0 +1,14 @@
+// attach to: a Color property (Fill color, Solid color, an effect Color slot)
+// gotcha: seedRandom with a beat-based seed = same colour every gig night. Add `time` to make it nightly-random.
+
+bpm = 128;
+beatLen = 60 / bpm;
+beatIndex = Math.floor(time / beatLen);
+
+seedRandom(beatIndex, true);
+
+// pick from a palette by index, or random RGB:
+// palette = [[1,0.3,0.8,1], [0.2,0.9,0.6,1], [1,0.6,0.2,1], [0.4,0.5,1,1]];
+// palette[Math.floor(random() * palette.length)]
+
+[random(), random(), random(), 1]

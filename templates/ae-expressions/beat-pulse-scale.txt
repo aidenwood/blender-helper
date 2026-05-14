@@ -1,0 +1,12 @@
+// attach to: Scale property of a layer
+// gotcha: this returns a uniform scale, not a [x,y] array. AE accepts a number for Scale and squares it.
+
+bpm = 128;
+restScale = 100;     // resting size %
+peakScale = 130;     // beat-peak size %
+decay = 6;           // higher = snappier decay
+
+beatLen = 60 / bpm;
+phase = (time % beatLen) / beatLen;   // 0 → 1 over each beat
+envelope = Math.exp(-decay * phase);  // 1 at beat, falls fast
+restScale + (peakScale - restScale) * envelope

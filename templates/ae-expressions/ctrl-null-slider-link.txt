@@ -1,0 +1,14 @@
+// attach to: any numeric property you want master-controlled
+// requires: a null layer in the comp named "CTRL" with Slider Controls applied
+//           (Effect → Expression Controls → Slider Control, renamed to e.g. "Intensity")
+
+ctrl = thisComp.layer("CTRL");
+intensity = ctrl.effect("Intensity")("Slider");
+baseValue = 100;   // what this property is when intensity = 1
+
+baseValue * intensity
+
+// For multi-control rigs:
+//   bpm        = ctrl.effect("BPM")("Slider");
+//   audioAmp   = ctrl.effect("AudioAmp")("Slider");
+//   colorHue   = ctrl.effect("Color")("Color");

@@ -1,0 +1,9 @@
+// attach to: Position, Rotation, or any vector property
+// gotcha: default wiggle() looks too jittery for stage work; multi-octave with low frequency feels alive but controlled
+
+freq = 0.6;     // wiggles per second (lower = slower drift)
+amp = 30;       // max deviation in property units
+octaves = 3;    // number of layered wiggles
+amp_mult = 0.4; // each octave is this much weaker
+
+wiggle(freq, amp, octaves, amp_mult)

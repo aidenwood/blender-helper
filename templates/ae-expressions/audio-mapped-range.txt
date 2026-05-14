@@ -1,0 +1,16 @@
+// attach to: any numeric property (Scale, Opacity, Rotation, an effect's Slider)
+// requires: Audio layer in comp, run Animation → Keyframe Assistant → Convert Audio to Keyframes
+//           which creates an "Audio Amplitude" layer with a "Both Channels" Slider.
+// gotcha: change the layer name + effect name if your Audio Amplitude layer is renamed
+
+audioLayer = thisComp.layer("Audio Amplitude");
+amp = audioLayer.effect("Both Channels")("Slider");
+
+inputMin = 0;        // expected min from amp
+inputMax = 30;       // expected max from amp (Audio Keyframes usually peaks 10–40)
+outputMin = 100;     // property value when audio is quiet
+outputMax = 180;     // property value when audio peaks
+
+linear(amp, inputMin, inputMax, outputMin, outputMax)
+
+// Use ease() instead of linear() if you want a softer curve.

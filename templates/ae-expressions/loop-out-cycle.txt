@@ -1,0 +1,9 @@
+// attach to: any animated property with 2+ keyframes
+// gotcha: leave at least two keyframes BEFORE this point in time, or it'll error
+
+loopOut("cycle");
+
+// variants — replace the line above with one of:
+// loopOut("pingpong");   // forward then reverse, no jump
+// loopOut("offset");     // adds the difference between first and last, so it climbs
+// loopOut("continue");   // continues the velocity past the last keyframe (no loop)

@@ -1,0 +1,11 @@
+// attach to: Opacity (or any property where 0/100 toggle makes sense)
+// gotcha: at high BPM + low duty cycle you can hit AE's 100Hz expression cap — stick to subdivisions ≤ 16th notes
+
+bpm = 128;
+subdivision = 4;   // 1 = beat, 2 = 8th, 4 = 16th, 8 = 32nd
+duty = 0.4;        // 0–1: fraction of each subdivision that's ON
+
+beatLen = 60 / bpm;
+stepLen = beatLen / subdivision;
+phase = (time % stepLen) / stepLen;
+phase < duty ? 100 : 0
